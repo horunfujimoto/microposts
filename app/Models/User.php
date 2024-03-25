@@ -180,12 +180,10 @@ class User extends Authenticatable
      * 指定されたMicropostがお気に入りに追加されているかチェックする。
      */
     public function is_favorite($micropostId)
-{
-    return $this->favorites()->where('micropost_id', $micropostId)
-                              ->where('favorites.user_id', $this->id)
-                              ->exists();
-}
-
-     
+    {
+        return $this->favorites()->where('micropost_id', $micropostId)
+                                  ->where('favorites.user_id', $this->id)
+                                  ->exists();
+    }
         
 }

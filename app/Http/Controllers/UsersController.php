@@ -97,7 +97,7 @@ class UsersController extends Controller
         $favorites = $user->favorites()->paginate(10);
 
         // フォロー一覧ビューでそれらを表示
-        return view('users.followings', [
+        return view('users.favorites', [
             'user' => $user,
             'users' => $favorites,
         ]);
